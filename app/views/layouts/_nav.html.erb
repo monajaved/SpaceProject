@@ -1,0 +1,9 @@
+<nav class="<%= navbar_color %>">
+    <div class="container">
+        <%= link_to("Home", root_path, class: "brand-logo")%>
+        <ul class="right">  
+            <%= render_nav_links(user_signed_in?) %>
+        
+        </ul>
+    </div>
+</nav>
