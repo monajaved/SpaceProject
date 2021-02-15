@@ -1,0 +1,8 @@
+<div class="container" style="padding-top:50px">
+
+    <%= form_for [@post, @comment] do |f| %>
+        <%= f.label :text, "Comment" %>
+        <%= f.text_field :text %>
+    <% end %>
+
+</div>

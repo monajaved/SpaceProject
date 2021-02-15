@@ -9,7 +9,14 @@ gem 'rails', '~> 6.1.1'
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
-gem 'devise'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'dotenv-rails'
+gem 'will_paginate', '~> 3.1.1'
+gem 'will_paginate-bootstrap' 
+
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'excon'
 gem 'pry'
 # gem 'omniauth', '~> 1.0.0.pr2'

@@ -1,29 +1,52 @@
-<h2>Sign up</h2>
+<div class="container" style="padding-top:50px">
+<h2 style="color:#808080; font-family:Copperplate">Sign up</h2> <br>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"><%= f.label :email %> </span><br>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"><%= f.label :password %></span><br>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% end %> <br>
+    <input class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"<%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"><%= f.label :password_confirmation %></span><br>
+    <input  class="form-control" aria-describedby="inputGroup-sizing-default"<%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default"><%= f.label :username %></span><br>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"<%= f.text_field :username, autofocus: true, autocomplete: "username" %>
   </div>
+
+  <div class="input-group mb-3">
+     <span class="input-group-text" id="inputGroup-sizing-default"><%= f.label :name %></span><br>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"<%= f.text_field :name, autofocus: true, autocomplete: "Name" %>
+  </div>
+
+  <div class="input-group mb-3">
+     <span class="input-group-text" id="inputGroup-sizing-default"><%= f.label :bio %></span><br>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"<%= f.text_area :bio, autofocus: true, autocomplete: "Bio" %>
+  </div> <br>
+
+
+  <div class="actions input-group mb-3">
+    <span class="input-group-text"  style="color:#808080; font-family:Copperplate" id="inputGroup-sizing-default"><%= f.submit "Sign up" %><br>
+  </div> 
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="actions input-group mb-3">
+    <span class="input-group-text"  style="color:#808080; font-family:Copperplate" id="inputGroup-sizing-default"><%= render "devise/shared/links" %></span><br>
+  </div> <br>
+
+
+</div>

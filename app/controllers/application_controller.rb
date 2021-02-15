@@ -13,4 +13,10 @@ class ApplicationController < ActionController::Base
     # def login_user
     #     session[:user_id] = @user.id
     # end
+    
+    # helpers do 
+    #     def redirect_if_not_user
+    #         redirect_to post_path(@post) unless current_user.id == @comment.user_id
+    #     end
+    # end
 end

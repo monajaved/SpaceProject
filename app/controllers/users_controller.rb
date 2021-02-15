@@ -9,8 +9,8 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        @user.posts.build
-        @user.posts.build
+        # @user.posts.build
+        # @user.posts.build
     end
 
 

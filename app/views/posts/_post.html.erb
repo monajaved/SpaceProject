@@ -1,1 +1,15 @@
-<%= link_to %>
+
+
+<div class=" container shadow-lg p-3 mb-5 bg-body rounded" style="padding-top:10px; ;">
+<div class="card">
+  <p class="card-header" style = "font-family: Georgia;"><%= post.date%></p>
+
+  <div class="card-body">
+    <h5 class="card-title" style = "font-family: Georgia;"> <%= post.title %></h5> <br>
+
+    <div style = "font-family: Georgia;"><%= link_to "Read more..", post_path(post) %> </div>
+  </div> <br>
+  <div class="card-footer text-muted">
+  </div> 
+</div>
+</div>
