@@ -19,18 +19,20 @@
                 <div> <% @post.comments.each do |c| %> <br>
                     <div class="card">
                         <div class="card-body">
-                        <div style="font-family: Courier New"><strong><%= c.user.email%></strong> </div>
+                        <div style="font-family: Courier New"><strong><%= c.user.username %></strong> </div>
                         <div style="font-family: Monaco"><%= c.text %> </div><br> 
                         <% if current_user == c.user %>
                             <a class="btn btn-dark" role="button" href=<%= edit_post_comment_path(@post, c)  %>>Edit</a>
                             <div class="btn btn-dark" role="button" ><%= link_to "Delete", post_comment_path(@post, c), method: "delete" %></div>
+                            <a class="btn btn-dark" role="button"  href= <%= new_post_comment_reply_path(@post, c, @reply) %>>Reply</a> 
                         <% else %>
                             <a class="btn btn-dark" role="button"  href= <%= new_post_comment_reply_path(@post, c, @reply) %>>Reply</a> 
+
                         <% end %>
                     
                                     <div ><% c.replies.each do |r| %> </div> <br>
                                         <div style="margin-left: 100px">
-                                        <div style="font-family: Courier New"> <strong><%= r.user.email %></strong></div> 
+                                        <div style="font-family: Courier New"> <strong><%= r.user.username %></strong></div> 
                                         <div style="font-family: Monaco"><%= r.text %> </div><br> 
                                             <a class="btn btn-dark" role="button" href=<%= edit_post_comment_reply_path(@post, c, r) %>>Edit</a> 
                                             <div class="btn btn-dark" role="button"><%= link_to "Delete", post_comment_reply_path(@post, c, r), method: "delete" %>  </div><br>

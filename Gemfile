@@ -12,7 +12,7 @@ gem 'puma', '~> 5.0'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-facebook'
 gem 'omniauth'
-gem 'dotenv-rails'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'will_paginate', '~> 3.1.1'
 gem 'will_paginate-bootstrap' 
 
