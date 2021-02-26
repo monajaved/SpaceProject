@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_071943) do
+ActiveRecord::Schema.define(version: 2021_02_15_233059) do
 
   create_table "comments", force: :cascade do |t|
     t.text "text"
@@ -44,9 +44,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_071943) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "username"
-    t.string "name"
-    t.string "bio"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -54,6 +51,9 @@ ActiveRecord::Schema.define(version: 2021_02_15_071943) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "provider"
     t.string "uid"
+    t.string "username"
+    t.string "name"
+    t.string "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["provider"], name: "index_users_on_provider"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
