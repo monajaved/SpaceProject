@@ -51,10 +51,12 @@
         </li>
         <% end %>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-5" type="search" placeholder="Search Posts" aria-label="Search">
-        <button class="btn btn-outline-secondary" style="font-family:Copperplate; color: #f0f0f5;" type="submit">Search</button> <br> <br>
-      </form> <br>
+      <%= form_tag("/posts", method: "get", class: "d-flex") do %>
+  
+      <%= text_field_tag :query, "Search", class:"form-control me-5", type:"search", placeholder:"Search Posts" %>
+      <%= submit_tag "search", data: { disable_with: false }, class:"btn btn-outline-secondary", style:"font-family:Copperplate; color: #f0f0f5;", type:"submit" %>
+      <% end %>
+     <br>
     </div>
   </div>
 </nav>

@@ -1,6 +1,4 @@
 <div class="container" style="padding-top:50px">
-<%= form_for [@post, @comment] do |f| %>
-        <%= f.label :text, "Comment: " %>
-        <%= f.text_field :text %>
-    <% end %>
+<h5>Edit Comment:</h5>
+<%= render partial: "form", locals: {post: @post, button_name: "Update"} %>
 </div>

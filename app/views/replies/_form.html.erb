@@ -1,0 +1,8 @@
+ <%= form_for [@post, @comment, @reply] do |f| %> <br>
+
+ <%= render partial: "layouts/errors", locals: {instance: @reply} %>
+ <div class="field<%= 'field_with_errors' if @reply.errors[:content].any? %>"></div>
+      
+        <%= f.text_field :text %> <br>
+        <%= f.submit button_name%>
+    <% end %>
