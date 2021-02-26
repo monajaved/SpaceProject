@@ -18,32 +18,9 @@ class PostsController < ApplicationController
         @reply = Reply.new
     end
 
-    # def create 
-    #     # binding.pry
-    #     # @user = User.find(params[:user_id])
-    #     @post = Post.new(post_params)
-    #     # @post = current_user.posts.new(post_params)
-    #     if @post.save
-    #             redirect_to posts_path(current_user)
-    #     else
-    #         flash.now[:error] = @post.errors.full_messages  
-    #         render :new
-    #     end
-
-    # end
 
     def edit 
-        # if params[:user_id]
-        # user = User.find_by(id: params[:user_id])
         @post = Post.find_by_id(params[:post_id])
-        # @comment = Comment.find_by_id(params[:id])
-
-        #     if @post = user.posts.find_by(id: params[:id])
-        #         redirect_to post_path(@post), alert: "Post not found." if @post.nil?
-        #     end
-        # else
-        #     @post = Post.find(params[:id])
-        # end
     end
 
     def update
