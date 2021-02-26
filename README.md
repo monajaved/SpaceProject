@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fork and clone this repository using the following link
+git@github.com:monajaved/SpaceProject.git
 
-Things you may want to cover:
+Make sure to "bundle install" to install all dependencies.
 
-* Ruby version
+Run "rails db:migrate" to create migrations.
 
-* System dependencies
+This application is using an API to seed data so run "rake db:seed" to seed the data.
 
-* Configuration
+Send in a request to make changes to the code.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
