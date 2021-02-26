@@ -13,8 +13,6 @@ gem "omniauth-rails_csrf_protection"
 gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'will_paginate', '~> 3.1.1'
-gem 'will_paginate-bootstrap' 
 
 gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'excon'
@@ -63,6 +61,9 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
+
+# gem 'will_paginate', '~> 3.1.1'
+# gem 'will_paginate-bootstrap' 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

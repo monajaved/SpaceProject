@@ -1,8 +1,13 @@
 class RepliesController < ApplicationController
+    before_action :authenticate_user!
     before_action :find_post, only: [:create, :new, :edit, :update, :destroy]
     before_action :find_comment, only: [:create, :new, :edit, :update, :destroy]
     before_action :find_reply, only: [:edit, :update, :destroy]
 
+
+    def new
+        @reply = Reply.new
+    end
 
     def create 
         @reply = Reply.new(replies_params)
@@ -11,20 +16,8 @@ class RepliesController < ApplicationController
         if @reply.save
             redirect_to post_path(@post)
         else 
-            render '/posts/show'
+            render :new
         end
-    end
-
-    def new
-        # if params[:post_id] && @post = Post.find_by_id(params[:post_id])
-        #     @reply = @post.comments.replies.build
-        # else
-        #     @error = "That post doesn't exist!" if params[:post_id]
-        #     @reply = Reply.new
-        # end
-        # @post = Post.find_by_id(params[:post_id])
-        # @comment = Comment.find_by_id(params[:comment_id])
-        @reply = Reply.new
     end
 
     def edit
