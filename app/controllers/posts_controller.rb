@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
-    before_action :find_user, only: [:index, :create]
+ 
     before_action :authenticate_user!, only: [:show, :create, :edit]
     before_action :find_post, only: [:show, :edit, :update, :destroy]
 
     def index
+        # binding.pry
         if !params[:query].blank?
             @posts = Post.search_post(params[:query])
+        elsif params[:user_id]
+            find_user
+            @posts = @user.posts.uniq
         else
             @posts = Post.all
         end
@@ -36,7 +40,7 @@ class PostsController < ApplicationController
 
     private
     def find_user
-        @user = User.find_by_id(params[:id])
+        @user = User.find_by_id(params[:user_id])
     end
 
     def find_post

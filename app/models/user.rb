@@ -6,8 +6,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
 
   has_many :replies
-  has_many :posts, through: :comment
   has_many :comments
+  has_many :posts, through: :comments
   validates :username, presence: true
  
     def self.from_omniauth(auth)

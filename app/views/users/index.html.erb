@@ -1,0 +1,7 @@
+<h1><%= @post.title %></h1>
+<p> Users that commented on the post:</p>
+<ul>
+<% @users.each do |u| %>
+<li> <%= link_to u.username, user_posts_path(u) %></li>
+<% end%>
+</ul>
